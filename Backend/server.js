@@ -4,8 +4,9 @@ const connectDB = require('./src/config/db');
 const app = express();
 
 connectDB();
-
 app.use(express.json());
+
+app.use("/api/auth", require("./src/auth/route"))
 
 app.get('/', (req, res) => res.send('API Running'));
 
