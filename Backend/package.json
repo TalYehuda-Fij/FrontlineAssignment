@@ -12,7 +12,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "imap-simple": "^5.1.0",
+    "mailparser": "^3.7.2",
     "mongoose": "^8.9.6",
     "nodemailer": "^6.10.0"
   },

@@ -1,5 +1,5 @@
 const sendEmail = require("../services/emailService");
-
+const fetchEmails = require("../services/imapService");
 
 const sendTestEmail = async (req, res) => {
     const { email, subject, message } = req.body;
@@ -10,4 +10,9 @@ const sendTestEmail = async (req, res) => {
     res.status(result.success ? 200 : 500).json(result); 
 };
 
-module.exports = {sendTestEmail};
+const getReceivedEmails = async (req, res) => {
+    const emails = await fetchEmails();
+    res.status(200).json({ emails });
+};
+
+module.exports = { sendTestEmail, getReceivedEmails };
