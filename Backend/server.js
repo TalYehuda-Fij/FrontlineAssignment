@@ -7,6 +7,7 @@ connectDB();
 app.use(express.json());
 
 app.use("/api/auth", require("./src/auth/route"))
+app.use("/api/email", require("./src/routes/emailRoutes"))
 
 app.get('/', (req, res) => res.send('API Running'));
 
