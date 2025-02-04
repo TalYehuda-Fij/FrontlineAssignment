@@ -1,14 +1,16 @@
 const User = require("../models/User")
 
 exports.register = async (req, res, next) => {
-    const { username, password } = req.body
+    const { firstname, lastname, email, password } = req.body
     if (password.length < 6) {
       return res.status(400).json({ message: "Password less than 6 characters" })
     }
     try {
       await User.create({
-        username,
+        firstname,
+        lastname,
         password,
+        email
       }).then(user =>
         res.status(200).json({
           message: "User successfully created",
@@ -24,14 +26,14 @@ exports.register = async (req, res, next) => {
   }
 
   exports.login = async (req, res, next) => {
-    const { username, password } = req.body
-    if (!username || !password) {
+    const { email, password } = req.body
+    if (!email || !password) {
       return res.status(400).json({
         message: "Username or Password not present",
       })
     }
     try {
-      const user = await User.findOne({ username, password })
+      const user = await User.findOne({ email, password })
       if (!user) {
         res.status(401).json({
           message: "Login not successful",

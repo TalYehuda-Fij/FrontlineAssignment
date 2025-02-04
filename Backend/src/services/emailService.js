@@ -3,7 +3,7 @@ const transporter = require("../config/mailer");
 const sendEmail = async (to, subject, text) => { 
     try { 
         const mailOptions = {
-            from: process.env.EMAIL_USER,
+            from,
             to,
             subject,
             text
