@@ -1,14 +1,32 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Auth.css';
+import axios from 'axios';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setError('');
+
+    try {
+      const response = await axios.post('http://localhost:5000/api/auth/login', {
+        email,
+        password,
+      });
+
+      if (response.status === 200) {
+        alert(response.data.message);
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+        navigate('/inbox');
+      }
+    } catch (err) {
+      setError(err.response?.data?.message || 'An error occurred');
+    }
   };
 
   return (

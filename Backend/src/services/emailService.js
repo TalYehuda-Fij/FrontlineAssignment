@@ -47,9 +47,12 @@ exports.sendEmail = async (req, res, next) => {
 
         const emails = await Email.find({
             $or: [{from: currentUser}, {to: currentUser }]            
-        });
-        
-        res.status(200).json({ emails });        
+        })
+        .populate("to", "firstname lastname email"  )
+        .populate("from", "firstname lastname email" )
+        .lean();
+                
+        return res.status(200).json({ emails });        
     } catch(err) {
         res.status(500).json({
             message: "Error getting emails for user",

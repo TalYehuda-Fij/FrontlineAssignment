@@ -4,13 +4,13 @@ const Mongoose = require("mongoose")
 const EmailSchema = new Mongoose.Schema({
   from:{ 
     type: Mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'user',
     required: true
  },  
   to: 
   { 
     type: Mongoose.Schema.Types.ObjectId,
-    ref: 'User', 
+    ref: 'user', 
     required: true
  },
   date: {
