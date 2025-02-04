@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const { sendTestEmail, getReceivedEmails } = require("../controllers/emailController");
+const { sendEmailAsync, getEmailsForUser } = require("../controllers/emailController");
 
-router.route("/send").post(sendTestEmail)
-router.route("/receive").get(getReceivedEmails);
+router.route("/send").post(sendEmailAsync)
+router.route("/fetch-emails").post(getEmailsForUser);
 
 module.exports = router;
