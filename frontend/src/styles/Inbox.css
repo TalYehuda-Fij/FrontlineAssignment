@@ -122,145 +122,14 @@
 .email-viewer h3 {
   margin: 0 0 10px 0;
   font-size: 1.5rem;
+  padding-bottom: 10px; 
+  border-bottom: 1px solid #ddd; 
 }
 
 .email-viewer p {
+  padding-bottom: 10px; 
+  border-bottom: 1px solid #ddd; 
   margin: 10px 0;
   font-size: 1rem;
   color: #333;
-}
-
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.popup-box {
-  background: #f9f9f9;
-  width: 450px;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-  position: relative;
-  animation: scaleIn 0.3s ease-in-out;
-}
-
-@keyframes scaleIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.popup-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-}
-
-.popup-header h3 {
-  margin: 0;
-  font-size: 18px;
-  color: #333;
-  font-weight: 600;
-}
-
-.popup-close-btn {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  color: #999;
-  transition: color 0.3s;
-}
-
-.popup-close-btn:hover {
-  color: #333;
-}
-
-.popup-form .form-group {
-  margin-bottom: 20px;
-}
-
-.popup-form .form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: #555;
-  font-weight: 500;
-}
-
-.popup-form .form-group input,
-.popup-form .form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 14px;
-  color: #333;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.popup-form .form-group input:focus,
-.popup-form .form-group textarea:focus {
-  border-color: #007bff;
-}
-
-.popup-form .form-group textarea {
-  resize: none;
-  height: 120px;
-}
-
-.popup-actions {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.popup-send-btn {
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.popup-send-btn:hover {
-  background-color: #0056b3;
-}
-
-.popup-cancel-btn {
-  background: #dc3545;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.popup-cancel-btn:hover {
-  background-color: #a71d2a;
 }
